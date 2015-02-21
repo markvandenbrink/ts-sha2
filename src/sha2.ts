@@ -1,5 +1,5 @@
 /**
- * ## Module / SHA
+ * ## Module / SHA2
  *
  * Implements the SHA-2 hashing algorithm which is a set of [cryptographic hash functions](http://en.wikipedia.org/wiki/Cryptographic_hash_function). Cryptographic hash functions are mathematical operations run on digital data. By comparing the computed hash to a known and expected hash value, a person can determine the data's integrity. A key aspect of cryptographic hash functions is their one-way nature: given only a computed hash value, it is generally impossible to derive the original data. The SHA-2 family consists of six hash functions with digests (hash values) that are 224, 256, 384 or 512 bits: SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, SHA-512/256.
  *
