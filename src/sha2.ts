@@ -140,21 +140,21 @@ function Aggregate(nA: number, nB: number): number {
 }
 
 /**
- * Conglomerates inputs to the hash.
+ * Conglomerates inputs to the buffer.
  * @param pBuffer Reference to the buffer.
  * @param nOffset Specifies the buffer offset.
- * @param pArguments Specifies the inputs.
+ * @param pInputs Specifies the inputs.
  */
-function Conglomerate(pBuffer: number[], nOffset: number, ...pArguments: number[]): void {
+function Conglomerate(pBuffer: number[], nOffset: number, ...pInputs: number[]): void {
     "use strict";
 
-    var nArgument: number = 0;
+    var nInput: number = 0;
     var nValue: number = 0;
     var nA: number = 0;
     var nB: number = 0;
 
-    for (; nArgument < pArguments.length / 2; nArgument++) {
-        nValue = pArguments[nArgument];
+    for (; nInput < pInputs.length / 2; nInput++) {
+        nValue = pInputs[nInput];
 
         nA += nValue & 0xffff;
         nB += nValue >>> 16;
@@ -167,8 +167,8 @@ function Conglomerate(pBuffer: number[], nOffset: number, ...pArguments: number[
     nA = nB >>> 16;
     nB = 0;
 
-    for (; nArgument < pArguments.length; nArgument++) {
-        nValue = pArguments[nArgument];
+    for (; nInput < pInputs.length; nInput++) {
+        nValue = pInputs[nInput];
 
         nA += nValue & 0xffff;
         nB += nValue >>> 16;
